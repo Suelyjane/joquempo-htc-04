@@ -1,0 +1,30 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+.header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.winner-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#0099FF;
+    width: 430px;
+    height: 74px;
+    border-radius: 12px 12px 0 0;
+    font-size: 33px;
+}
+ .scoreboard-box{
+    width: 50%;
+    height: 148px;
+    background-color: #0099FF;
+    border-radius: 17px;
+
+}
