@@ -7,21 +7,21 @@ body{
     height: 100vh;
 }
 .header{
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 .winner-title{
     display: flex;
     justify-content: center;
     align-items: center;
     background-color:#0099FF;
-    color: #ffff;
+    color: #ffffff;
     width: 430px;
     height: 74px;
-    border-radius: 12px 12px 0 0;
     font-size: 33px;
+    border-radius: 12px 12px 0 0;
 }
  .scoreboard-box{
     display: flex;
@@ -31,11 +31,12 @@ body{
     height: 148px;
     background-color: #0099FF;
     border-radius: 17px;
+    
 }
 .player-name{
     font-size: 38px;
     font-weight: 700;
-    color: #ffff;
+    color: #ffffff;
 }
 
 .score {
@@ -48,7 +49,7 @@ body{
     font-weight: 900;
     border-radius: 17px;
     color: #0099FF;
-    background-color: #ffff;
+    background-color: #ffffff;
 }
 
 .score-separation{
@@ -59,12 +60,13 @@ body{
     font-weight: 900;
     color: #ffffff;    
 }
+
 .battle-field{
     display: flex;
     justify-content: space-between;
     margin-top: 2%;   
     width: 100%;
-    height: 50%;    
+    height: 45%;    
     padding: 0 2%;
     gap: 16px;
 
@@ -140,38 +142,51 @@ body{
 
     .winner-title{
         width: 90%;
+        font-size: 24px;
     }
 
     .scoreboard-box{
-        width: 100%;
+        width: 100%;        
     }
 
+    .score{
+        width: 95px;
+        height: 108px;
+        font-size: 75px
+    }
+
+    .score-separation{
+        justify-content: center;
+    }
+    
     .config-box{
-        gap: 10px;
-        
+        gap: 10px;        
     }
 
     .battle-field{
         flex-direction: column;
     }
+
     .button-move-wrapper{
         flex-direction: row;
         height: unset;
     }
+
     .button-move{
         font-size: 25px;
         width: 115px;
     }
-
+    
     .board{
         padding: 10px;
     }
-
+    
     .move-box{
         width: 40%;
     }
-
+    
     .move-box-separation{
         font-size: 20px;
     }
 }
+
