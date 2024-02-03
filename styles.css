@@ -118,10 +118,22 @@ body{
 }
 
 .move-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 36%;
     height: 100%;
     background-color: #DBF1FF;
     border-radius: 17px;
+}
+
+.move-box img {
+    width: 80%;
+    height: auto;
+}
+
+#move-box-2 img{
+    transform: scaleX(-1);
 }
 
 .move-box-separation{
@@ -188,38 +200,37 @@ body{
     .move-box-separation{
         font-size: 20px;
     }
+    @media screen and (min-width: 768px) {
+        .scoreboard-box{
+            width: 90%;
+        }
+    
+        .move-box-separation{
+            font-size: 60px;
+        }
+    
+        .battle-field{
+            height: 30%;
+        }
+    
+        .board{
+            padding: 15px;
+            height: 75%;
+            margin-top: 10px;
+        }
+    
+        .button-move-wrapper{
+            height: 75%;
+            margin-top: 10px;
+        }
+    
+        .config-box {
+            margin-top: 0px;
+        }
+    
+        .button-move{
+            width: 160px;
+        } 
+    
+    }    
 }
-@media screen and (min-width: 768px) {
-    .scoreboard-box{
-        width: 90%;
-    }
-
-    .move-box-separation{
-        font-size: 60px;
-    }
-
-    .battle-field{
-        height: 30%;
-    }
-
-    .board{
-        padding: 15px;
-        height: 75%;
-        margin-top: 10px;
-    }
-
-    .button-move-wrapper{
-        height: 75%;
-        margin-top: 10px;
-    }
-
-    .config-box {
-        margin-top: 0px;
-    }
-
-    .button-move{
-        width: 160px;
-    } 
-
-}
-
