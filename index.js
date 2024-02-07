@@ -21,22 +21,23 @@ let player1Score = 0
 let player2Score = 0
 
 function setWinner (){
-    if(movePlayer1 =='' || movePlayer2 == ''){
+    if (movePlayer1 == '' || movePlayer2 == ''){
         return
     }
-    if(movePlayer1 == 'stone' && movePlayer2 == 'paper'){
+
+    if (movePlayer1 == 'stone' && movePlayer2 == 'paper'){
         winner = 2        
-    }else if(movePlayer1 == 'stone' && movePlayer2 == 'scissors'){
+    }else if (movePlayer1 == 'stone' && movePlayer2 == 'scissors'){
         winner = 1
-    }else if(movePlayer1 == 'paper' && movePlayer2 == 'stone'){
+    }else if (movePlayer1 == 'paper' && movePlayer2 == 'stone'){
         winner = 2
-    }else if(movePlayer1 == 'paper' && movePlayer2 == 'scissors'){
+    }else if (movePlayer1 == 'paper' && movePlayer2 == 'scissors'){
         winner = 2
-    }else if(movePlayer1 == 'scissors' && movePlayer2 == 'stone'){
+    }else if (movePlayer1 == 'scissors' && movePlayer2 == 'stone'){
         winner = 2
-    }else if(movePlayer1 == 'scissors' && movePlayer2 == 'paper'){
+    }else if (movePlayer1 == 'scissors' && movePlayer2 == 'paper'){
         winner = 1
-    } else if(movePlayer1 == movePlayer2){
+    } else if (movePlayer1 == movePlayer2){
         winner = 3
     }
 }
@@ -51,20 +52,20 @@ function addWinnerScore(){
 
 function printWinnerScore(){
     $scorePlayer1.innerHTML = player1Score.toString().padStart(2, '0')
-    $scorePlayer2.innerHTML = player2ScoretoString().padStart(2, '0')
+    $scorePlayer2.innerHTML = player2Score.toString().padStart(2, '0')
 }
 
 function printWinnerName(){
     if(winner == 1){
-        winnerTitle.innerHTML = 'Jogador 1 venceu'
+        $winnerTitle.innerHTML = 'Jogador 1 venceu'
     } else if(winner == 2){
-        winnerTitle.innerHTML = 'Jogador 2 vencer'
+        $winnerTitle.innerHTML = 'Jogador 2 vencer'
     } else if(winner == 3){
-        winnerTitle.innerHTML = 'Empate'
+        $winnerTitle.innerHTML = 'Empate'
     }
 }
 
-function resetBattleField(){
+function resetBattlefield(){
     $moveBox1.innerHTML = ''
     $moveBox2.innerHTML = ''
 }
@@ -82,7 +83,7 @@ function handleStone1Move(){
     printWinnerScore()
     printWinnerName()
     if(winner != 0){
-        setTimeout(resetBattleField, 1000)
+        setTimeout(resetBattlefield, 1000)
         resetMoveVariables()
         winner = 0
     }
@@ -96,6 +97,7 @@ function handlePaper1Move(){
     printWinnerScore()
     printWinnerName()
     if(winner != 0){
+        setTimeout(resetBattlefield, 1000)
         resetMoveVariables()
         winner = 0
     }
@@ -109,7 +111,7 @@ function handleScissors1Move(){
     printWinnerScore()
     printWinnerName()
     if(winner != 0){
-        setTimeout(resetBattleField, 1000)
+        setTimeout(resetBattlefield, 1000)
         resetMoveVariables()
         winner = 0
     }
@@ -118,13 +120,12 @@ function handleScissors1Move(){
 function handleStone2Move(){
     $moveBox2.innerHTML = '<img src="/images/stone.png" alt= "imagem pedra" title= "imagem pedra">'
     movePlayer2 = 'stone'
-    setTimeout(resetBattleField, 1000)
-    setWinner()
     setWinner()
     addWinnerScore()
+    printWinnerScore()
     printWinnerName()
     if(winner != 0){
-        setTimeout(resetBattleField, 1000)
+        setTimeout(resetBattlefield, 1000)
         resetMoveVariables()
         winner = 0
     }
@@ -138,7 +139,7 @@ function handlePaper2Move(){
     printWinnerScore()
     printWinnerName()
     if(winner != 0){
-        setTimeout(resetBattleField, 1000)
+        setTimeout(resetBattlefield, 1000)
         resetMoveVariables()
         winner = 0
     }
@@ -152,7 +153,7 @@ function handleScissors2Move(){
     printWinnerScore()
     printWinnerName()
     if(winner != 0){
-        setTimeout(resetBattleField, 1000)
+        setTimeout(resetBattlefield, 1000)
         resetMoveVariables()
         winner = 0
     }
