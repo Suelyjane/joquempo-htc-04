@@ -76,7 +76,7 @@ function resetMoveVariables(){
 }
     
 function handleStone1Move(){
-    $moveBox1.innerHTML = '<img src="/images/stone.png" alt= "imagem pedra" title= "imagem pedra">'
+    $moveBox1.innerHTML = '<img src="images/stone.png" alt= "imagem pedra" title= "imagem pedra">'
     movePlayer1 = 'stone'
     setWinner()
     addWinnerScore()
@@ -90,7 +90,7 @@ function handleStone1Move(){
 }
 
 function handlePaper1Move(){
-    $moveBox1.innerHTML = '<img src="/images/paper.png" alt= "imagem papel" title= "imagem papel">'
+    $moveBox1.innerHTML = '<img src="images/paper.png" alt= "imagem papel" title= "imagem papel">'
     movePlayer1 = 'paper'
     setWinner()
     addWinnerScore()
@@ -104,7 +104,7 @@ function handlePaper1Move(){
 }
 
 function handleScissors1Move(){
-    $moveBox1.innerHTML = '<img src="/images/scissors.png" alt= "imagem tesoura" title= "imagem tesoura">'
+    $moveBox1.innerHTML = '<img src="images/scissors.png" alt= "imagem tesoura" title= "imagem tesoura">'
     movePlayer1 = 'scissors'
     setWinner()
     addWinnerScore()
@@ -118,7 +118,7 @@ function handleScissors1Move(){
 }
 
 function handleStone2Move(){
-    $moveBox2.innerHTML = '<img src="/images/stone.png" alt= "imagem pedra" title= "imagem pedra">'
+    $moveBox2.innerHTML = '<img src="images/stone.png" alt= "imagem pedra" title= "imagem pedra">'
     movePlayer2 = 'stone'
     setWinner()
     addWinnerScore()
@@ -132,7 +132,7 @@ function handleStone2Move(){
 }
 
 function handlePaper2Move(){
-    $moveBox2.innerHTML = '<img src="/images/paper.png" alt= "imagem papel" title= "imagem papel">'
+    $moveBox2.innerHTML = '<img src="images/paper.png" alt= "imagem papel" title= "imagem papel">'
     movePlayer2 = 'paper'
     setWinner()
     addWinnerScore()
@@ -146,7 +146,7 @@ function handlePaper2Move(){
 }
 
 function handleScissors2Move(){
-    $moveBox2.innerHTML = '<img src="/images/scissors.png" alt= "imagem tesoura" title= "imagem tesoura">'
+    $moveBox2.innerHTML = '<img src="images/scissors.png" alt= "imagem tesoura" title= "imagem tesoura">'
     movePlayer2 = 'scissors'
     setWinner()
     addWinnerScore()
