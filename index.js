@@ -14,11 +14,16 @@ const $scorePlayer2 = document.querySelector('#score-2')
 
 const $winnerTitle = document.querySelector('.winner-title')
 
+const $buttonReset = document.querySelector('.button-reset')
+
+const $buttonStart = document.querySelector('.button-start')
+
 let movePlayer1 = ''
 let movePlayer2 = ''
 let winner = 0
 let player1Score = 0
 let player2Score = 0
+let gameStart = false
 
 function setWinner (){
     if (movePlayer1 == '' || movePlayer2 == ''){
@@ -50,6 +55,11 @@ function addWinnerScore(){
     }
 }
 
+function resetScore(){
+    player1Score = 0
+    player2Score = 0
+}
+
 function printWinnerScore(){
     $scorePlayer1.innerHTML = player1Score.toString().padStart(2, '0')
     $scorePlayer2.innerHTML = player2Score.toString().padStart(2, '0')
@@ -63,6 +73,9 @@ function printWinnerName(){
     } else if(winner == 3){
         $winnerTitle.innerHTML = 'Empate'
     }
+    if (winner == 0){
+        $winnerTitle.innerHTML = 'Indefinido'
+    }
 }
 
 function resetBattlefield(){
@@ -74,22 +87,17 @@ function resetMoveVariables(){
     movePlayer1 = ''
     movePlayer2 = ''
 }
-    
-function handleStone1Move(){
-    $moveBox1.innerHTML = '<img src="images/stone.png" alt= "imagem pedra" title= "imagem pedra">'
-    movePlayer1 = 'stone'
-    setWinner()
-    addWinnerScore()
+
+function resetAll(){
+    resetMoveVariables()
+    resetBattlefield()
+    resetScore()
     printWinnerScore()
     printWinnerName()
-    if(winner != 0){
-        setTimeout(resetBattlefield, 1000)
-        resetMoveVariables()
-        winner = 0
-    }
 }
 
 function handlePaper1Move(){
+    if (gameStart == false) return
     $moveBox1.innerHTML = '<img src="images/paper.png" alt= "imagem papel" title= "imagem papel">'
     movePlayer1 = 'paper'
     setWinner()
@@ -104,6 +112,7 @@ function handlePaper1Move(){
 }
 
 function handleScissors1Move(){
+    if (gameStart == false) return
     $moveBox1.innerHTML = '<img src="images/scissors.png" alt= "imagem tesoura" title= "imagem tesoura">'
     movePlayer1 = 'scissors'
     setWinner()
@@ -116,8 +125,23 @@ function handleScissors1Move(){
         winner = 0
     }
 }
+    function handleStone1Move(){
+        if (gameStart == false) return
+        $moveBox1.innerHTML = '<img src="images/stone.png" alt= "imagem pedra" title= "imagem pedra">'
+        movePlayer1 = 'stone'
+        setWinner()
+        addWinnerScore()
+        printWinnerScore()
+        printWinnerName()
+        if(winner != 0){
+            setTimeout(resetBattlefield, 1000)
+            resetMoveVariables()
+            winner = 0
+        }
+    }
 
 function handleStone2Move(){
+    if (gameStart == false) return
     $moveBox2.innerHTML = '<img src="images/stone.png" alt= "imagem pedra" title= "imagem pedra">'
     movePlayer2 = 'stone'
     setWinner()
@@ -132,6 +156,7 @@ function handleStone2Move(){
 }
 
 function handlePaper2Move(){
+    if (gameStart == false) return
     $moveBox2.innerHTML = '<img src="images/paper.png" alt= "imagem papel" title= "imagem papel">'
     movePlayer2 = 'paper'
     setWinner()
@@ -146,6 +171,7 @@ function handlePaper2Move(){
 }
 
 function handleScissors2Move(){
+    if (gameStart == false) return
     $moveBox2.innerHTML = '<img src="images/scissors.png" alt= "imagem tesoura" title= "imagem tesoura">'
     movePlayer2 = 'scissors'
     setWinner()
@@ -159,6 +185,18 @@ function handleScissors2Move(){
     }
 }
 
+function handleToggleGame(){
+    if (gameStart == true){
+        gameStart = false
+        $buttonStart.textContent = 'Iniciar'
+        $buttonStart.classList.remove('started')
+    } else {
+        gameStart = true
+        $buttonStart.classList.add('started')
+        $buttonStart.textContent = 'Parar'
+    }
+}
+
 $buttonStonePlayer1.addEventListener('click', handleStone1Move)
 $buttonPaperPlayer1.addEventListener('click',handlePaper1Move)
 $buttonScissorsPlayer1.addEventListener('click', handleScissors1Move)
@@ -167,6 +205,8 @@ $buttonStonePlayer2.addEventListener('click', handleStone2Move)
 $buttonPaperPlayer2.addEventListener('click',handlePaper2Move)
 $buttonScissorsPlayer2.addEventListener('click', handleScissors2Move)
 
+$buttonReset.addEventListener('click', resetAll)
+$buttonStart.addEventListener('click', handleToggleGame)
 
 
 

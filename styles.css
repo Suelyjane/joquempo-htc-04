@@ -136,6 +136,15 @@ body{
     transform: scaleX(-1);
 }
 
+.started{
+    background-color: red;
+    border: 1px solid red;
+}
+
+.started:hover{
+    color: red;
+}
+
 .move-box-separation{
     font-size: 104px;
     color: #ffffff;
